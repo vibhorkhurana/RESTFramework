@@ -21,8 +21,8 @@ Including another URLconf
 urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'sensors/$',views.sensor_data),
-    
+    url(r'sensors/$',views.SensorList.as_view()),
+    url(r'sensors/(?P<pk>\d+)/$',views.SensorDetail.as_view(),name='sensors')
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

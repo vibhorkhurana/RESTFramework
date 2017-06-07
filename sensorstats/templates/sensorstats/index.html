@@ -15,7 +15,7 @@
     </h1>
     <h2>This is your guide!</h2>
     <ul>
-        <li><button><a href="ftp://localhost">My Ftp Server</a></button></li>
+        <li><a href="ftp://localhost">My Ftp Server</a></li>
         <li><a href="https://github.com/vibhorkhurana">My Git Hub</a></li>
         <li><a href="http://localhost:8000/admin">admin</a></li>
         <li><a href="http://localhost:8000/sensors">MySensorsRestAPI</a></li>
@@ -23,12 +23,11 @@
     </ul>
 
     <h2>List of Sensors available</h2>
-    <ul>
-        {% for sensor in sensors %}
-        <ul>
-            {{sensor.sensorid}}
-        </ul>
-        {% endfor %}
+    {% for sensor in sensors %} {% if sensor.sensorid != "" %}
+    <li>
+        <a href={% url 'sensors' sensor.id %}>{{sensor.id}} {{sensor.sensorid}} {{sensor.valType}} </a>
+    </li>
+    {% endif %} {% endfor %}
 
     </ul>
 

@@ -1,12 +1,12 @@
 html {
     background: #e6e9e9;
     /*background-image: linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);*/
-    /*background-image: "http://i2.cdn.cnn.com/cnnnext/dam/assets/150909155452-awards-season-2015-2016-background-full-169.jpg";*/
+    background-image: url("http://i2.cdn.cnn.com/cnnnext/dam/assets/150909155452-awards-season-2015-2016-background-full-169.jpg");
     webkit-font-smoothing: auntialiased;
 }
 
 body {
-    background-image: url("http://i2.cdn.cnn.com/cnnnext/dam/assets/150909155452-awards-season-2015-2016-background-full-169.jpg");
+    /*background-image: url("http://i2.cdn.cnn.com/cnnnext/dam/assets/150909155452-awards-season-2015-2016-background-full-169.jpg");*/
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     color: #FF8901;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
