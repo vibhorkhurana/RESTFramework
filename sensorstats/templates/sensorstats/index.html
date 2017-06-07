@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to my World</title>
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+    <h1>
+        <Blink>Welcome to my World</Blink>
+    </h1>
+    <h2>This is your guide!</h2>
+    <ul>
+        <li><button><a href="ftp://localhost">My Ftp Server</a></button></li>
+        <li><a href="https://github.com/vibhorkhurana">My Git Hub</a></li>
+        <li><a href="http://localhost:8000/admin">admin</a></li>
+        <li><a href="http://localhost:8000/sensors">MySensorsRestAPI</a></li>
+        </li>
+    </ul>
+
+    <h2>List of Sensors available</h2>
+    <ul>
+        {% for sensor in sensors %}
+        <ul>
+            {{sensor.sensorid}}
+        </ul>
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>
