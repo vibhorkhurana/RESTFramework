@@ -22,7 +22,13 @@ urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'sensors/$',views.SensorList.as_view()),
-    url(r'sensors/(?P<pk>\d+)/$',views.SensorDetail.as_view(),name='sensors')
+    url(r'sensors/(?P<pk>\d+)/$',views.SensorDetail.as_view(),name='sensors'),
+    url(r'^users/$', views.UserList.as_view()),
+    url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+]
