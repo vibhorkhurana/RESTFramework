@@ -13,6 +13,13 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.decorators import api_view
 
+# @api_view(['GET'])
+# def api_root(request):
+#     return Response({
+#         'users': reverse('user-list', request=request, format=format),
+#         'sensors': reverse('sensor-list', request=request, format=format)
+#     })
+
 def index(request):
     sensors = Sensor.objects.all()
     serializer = sensorSerializer(sensors, many=True)
